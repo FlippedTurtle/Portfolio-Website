@@ -5,50 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Loading - Flipped Turtle</title>
     <link rel="stylesheet" href="Style/Loading.css" />
-    <style>
-      /* Basic loader styles */
-      body {
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        background-color: #fffefc;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        font-family: 'Inter', sans-serif;
-      }
-
-      #loader img {
-        width: 140px;
-        height: auto;
-        margin-bottom: 15px;
-      }
-
-      #loader p {
-        font-size: 16px;
-        color: #333;
-        animation: pulse 1.6s ease-in-out infinite;
-      }
-
-      @keyframes pulse {
-        0%, 100% { opacity: 0.3; }
-        50% { opacity: 1; }
-      }
-    </style>
-    <script>
-      // Delay and redirect logic
-      window.onload = function () {
-        setTimeout(function () {
-          window.location.href = "Home.html"; // ← change to your target page
-        }, 2000); // 2 seconds
-      };
-    </script>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
   </head>
   <body>
-    <div id="loader">
-      <img src="Assert/loading 1.gif" alt="Loading..." />
-      <p>Loading Flipped Turtle...</p>
+    <div class="loading-wrapper">
+      <dotlottie-player
+        src="https://lottie.host/0d5e8e01-03f9-4922-bab0-7f846951eef0/8IdW7SFzXw.lottie"
+        background="transparent"
+        speed="1"
+        style="width: 300px; height: 300px"
+        loop
+        autoplay
+      ></dotlottie-player>
+    </div>
+
+    <div class="footer">
+      <p>© 2025 Flipped Turtle. All rights reserved.</p>
     </div>
   </body>
 </html>
+<script>
+  window.onload = function () {
+    setTimeout(function () {
+      window.location.href = "Home.html";
+    }, 3000);
+  };
+</script>
