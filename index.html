@@ -1,27 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flipped Turtle</title>
-    <link rel="stylesheet" href="Style/home.css">
-</head>
-<body>
-    <div class="home-center">
-        <img src="Assert/loading 1.gif" alt="Flipped Turtle Logo" style="width: 150px; height: auto; display: block; margin: 0 auto; margin-bottom: -25px;">
-        <h1 id="home-title"> / flippedturtle / </h1>
-        <p id="home-para">We Build The best ERP Systems &lt; 3</p>
-        <div class="Menu">
-        <a href="">About</a>
-        <a href="">Services</a>
-        <a href="">Portfolio</a>
-        <a href="">Contact</a>
-        <a href="" class="quote-btn">Get A Quote</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading - Flipped Turtle</title>
+    <link rel="stylesheet" href="Style/Loading.css" />
+    <style>
+      /* Basic loader styles */
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-color: #fffefc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Inter', sans-serif;
+      }
+
+      #loader img {
+        width: 140px;
+        height: auto;
+        margin-bottom: 15px;
+      }
+
+      #loader p {
+        font-size: 16px;
+        color: #333;
+        animation: pulse 1.6s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 1; }
+      }
+    </style>
+    <script>
+      // Delay and redirect logic
+      window.onload = function () {
+        setTimeout(function () {
+          window.location.href = "Home.html"; // ← change to your target page
+        }, 2000); // 2 seconds
+      };
+    </script>
+  </head>
+  <body>
+    <div id="loader">
+      <img src="Assert/loading 1.gif" alt="Loading..." />
+      <p>Loading Flipped Turtle...</p>
     </div>
-    </div>
-    
-    <div class="footer">
-        <p>© 2024 Flipped Turtle. All rights reserved.</p>
-    </div>
-</body>
+  </body>
 </html>
