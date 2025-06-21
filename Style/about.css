@@ -267,17 +267,25 @@ ul {
 
 /* Footer Fixes */
 footer {
+  position: fixed;             /* Make it stick to the bottom */
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: #fafafa;
   border-top: 1px solid #ddd;
   padding: 15px 40px;
+  z-index: 999;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .footer-content {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between; /* Changed to space-between for better layout */
   flex-wrap: wrap;
   gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo {
@@ -291,6 +299,7 @@ footer {
   display: flex;
   gap: 24px;
   font-family: 'Open Sans', sans-serif;
+  flex-wrap: wrap;
 }
 
 .footer-nav a {
@@ -315,4 +324,14 @@ footer {
 
 .footer-action a:hover {
   color: #ff457c;
+}
+
+/* To avoid footer overlapping content */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-bottom: 120px; /* Leave space for the fixed footer */
 }
