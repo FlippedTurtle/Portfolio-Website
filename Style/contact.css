@@ -1,0 +1,73 @@
+    body {
+      margin: 0;
+      font-family: 'Unica One', sans-serif;
+      background-color: #ffffff;
+      color: #1a1a1a;
+      padding: 40px 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    .continer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 80vh;
+    }
+    h1 {
+      font-size: 28px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      font-family: trebuchet ms, Verdana, verdana ref, segoe ui, Candara, lucida grande, lucida sans unicode, lucida sans, Tahoma, sans-serif;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      font-family: trebuchet ms, Verdana, verdana ref, segoe ui, Candara, lucida grande, lucida sans unicode, lucida sans, Tahoma, sans-serif;
+    }
+
+    input, textarea {
+      padding: 12px 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+      resize: vertical;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    button {
+      padding: 12px 16px;
+      background-color: #ff598b;
+      color: #2e2e2e;
+      font-weight: bold;
+      border: none;
+      border-radius: 9px;
+      cursor: pointer;
+      transition: background 0.2s ease-in-out;
+      width: 20vh;
+    }
+
+    button:hover {
+      background-color: #ff457c;
+    }
+        @media (max-width: 600px) {
+      h1 {
+        font-size: 22px;
+      }
+
+      input, textarea {
+        font-size: 14px;
+      }
+    }
