@@ -1,0 +1,129 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Manrope', sans-serif;
+      overflow: hidden;
+    }
+
+    .quote-container {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .card {
+      flex: 1;
+      position: relative;
+      transition: transform 0.3s ease;
+      overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      z-index: 2;
+    }
+
+    /* Diagonal clipping between cards (except first and last edge) */
+    .card:nth-child(2),
+    .card:nth-child(3),
+    .card:nth-child(4) {
+      clip-path: polygon(0 0, 100% 5vw, 100% 100%, 0 100%);
+    }
+
+    /* White and gray backgrounds */
+    .card:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    .card:nth-child(even) {
+      background-color: #f4f4f4;
+    }
+
+    .card-content {
+      position: absolute;
+      top: 25%;
+      left: 10%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .card h2 {
+      font-size: 22px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      color: #111;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #444;
+      max-width: 80%;
+    }
+.overlay-form {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: rgba(255, 255, 255, 0.92); /* Light background */
+  color: #111;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card:hover .overlay-form {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay-form input,
+.overlay-form textarea {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  color: #111;
+  background: #fff;
+}
+
+.overlay-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background: #ff457c;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.overlay-form button:hover {
+  background: #e53e70;
+}
+    @media (max-width: 768px) {
+      .quote-container {
+        flex-direction: column;
+        overflow-y: auto;
+      }
+
+      .card {
+        clip-path: none !important;
+        height: 100vh;
+      }
+    }
