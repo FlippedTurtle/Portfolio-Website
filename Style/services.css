@@ -101,3 +101,8 @@ body{
     }
 }
 
+@media (max-width : 768px){
+    .service-center{
+        width:85%;
+    }
+}

@@ -1,78 +1,79 @@
-     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    html, body {
-      height: 100%;
-      font-family: 'Manrope', sans-serif;
-      overflow: hidden;
-    }
+html,
+body {
+  height: 100%;
+  font-family: "Manrope", sans-serif;
+  overflow: hidden;
+}
 
-    .quote-container {
-      display: flex;
-      height: 100vh;
-      width: 100vw;
-    }
+.quote-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
 
-    .card {
-      flex: 1;
-      position: relative;
-      transition: transform 0.3s ease;
-      overflow: hidden;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
+.card {
+  flex: 1;
+  position: relative;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
 
-    .card:hover {
-      transform: scale(1.03);
-      z-index: 2;
-    }
+.card:hover {
+  transform: scale(1.03);
+  z-index: 2;
+}
 
-    /* Diagonal clipping between cards (except first and last edge) */
-    .card:nth-child(2),
-    .card:nth-child(4) {
-      clip-path: polygon(0 0, 100% 5vw, 100% 100%, 0 100%);
-    }
+/* Diagonal clipping between cards (except first and last edge) */
+.card:nth-child(2),
+.card:nth-child(4) {
+  clip-path: polygon(0 0, 100% 5vw, 100% 100%, 0 100%);
+}
 
-    /* White and gray backgrounds */
-    .card:nth-child(odd) {
-      background-color: #ffffff;
-    }
+/* White and gray backgrounds */
+.card:nth-child(odd) {
+  background-color: #ffffff;
+}
 
-    .card:nth-child(even) {
-      background-color: #f4f4f4;
-      transition: all ease-in 0.3s;
-    }
-    
-    .card:nth-child(even):hover{
-      clip-path: polygon(0 0, 100% 0vw, 100% 100%, 0 100%);
-    }
+.card:nth-child(even) {
+  background-color: #f4f4f4;
+  transition: all ease-in 0.3s;
+}
 
+.card:nth-child(even):hover {
+  clip-path: polygon(0 0, 100% 0vw, 100% 100%, 0 100%);
+}
 
-    .card-content {
-      position: absolute;
-      top: 25%;
-      left: 10%;
-      z-index: 2;
-      pointer-events: none;
-    }
+.card-content {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  z-index: 2;
+  pointer-events: none;
+}
 
-    .card h2 {
-      font-size: 22px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-      color: #111;
-      font-family: "Unica One", sans-serif;
-    }
+.card h2 {
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #111;
+  font-family: "Unica One", sans-serif;
+}
 
-    .card p {
-      font-size: 14px;
-      color: #aaaaaa;
-      max-width: 80%;
-      font-family: trebuchet ms, Verdana, verdana ref, segoe ui, Candara, lucida grande, lucida sans unicode, lucida sans, Tahoma, sans-serif;
-    }
+.card p {
+  font-size: 14px;
+  color: #aaaaaa;
+  max-width: 80%;
+  font-family: trebuchet ms, Verdana, verdana ref, segoe ui, Candara,
+    lucida grande, lucida sans unicode, lucida sans, Tahoma, sans-serif;
+}
 .overlay-form {
   position: absolute;
   bottom: 0;
@@ -110,7 +111,7 @@
 }
 
 .overlay-form button {
-  width:80%;
+  width: 80%;
   padding: 10px 0px;
   border: none;
   border-radius: 6px;
@@ -125,33 +126,106 @@
 .overlay-form button:hover {
   background: #e53e70;
 }
-    @media (max-width: 768px) {
-      .quote-container {
-        flex-direction: column;
-        overflow-y: auto;
-      }
+@media (max-width: 768px) {
+  
 
-      .card {
-        clip-path: none !important;
-        height: 100vh;
-      }
-    }
+  .quote-container {
+    flex-direction: column;
+    min-height: auto;
+    width: 100%;
+    overflow-y: scroll;
+  }
 
-    
+  .card {
+    flex: none;
+    clip-path: none !important;
+    min-height: 95vh;
+    width: 100%;
+    transform: none !important;
+    position: relative;
+  }
+
+  .card:hover {
+    transform: none !important;
+  }
+
+  .card-content {
+    height:auto;
+    top: 15%;
+    left: 5%;
+    right: 5%;
+    position: absolute;
+  }
+
+  .card h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .card p {
+    font-size: 16px;
+    max-width: 90%;
+  }
+
+  .card:nth-last-child{
+    margin-bottom: 10vh;
+  }
+
+  .overlay-form {
+    opacity: 1;
+    pointer-events: auto;
+    height: 70%;
+    margin: 30px 0 0 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    padding: 15px;
+    animation: SlideUp 0.5s ease-in;
+  }
+
+  .card:nth-child(even) .overlay-form {
+    background: rgba(244, 244, 244, 0.95);
+  }
+
+  .overlay-form input,
+  .overlay-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
+
+  .overlay-form button {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+  }
+}
+
 @keyframes SlideDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-    50% {
-        opacity: 0.8;
-        transform: translateY(5%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0%);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
 .slide-down {
-    animation: SlideDown cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s both;
+  animation: SlideDown cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s both;
+}
+@keyframes SlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }

@@ -105,3 +105,9 @@ body {
     width: 100%;
   }
 }
+
+@media (width <= 480px) {
+  .footer-nav a{
+    font-size: 0.9rem;
+  }
+}
