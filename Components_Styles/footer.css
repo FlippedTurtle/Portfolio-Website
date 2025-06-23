@@ -8,6 +8,11 @@ footer {
   padding: 15px 40px;
   z-index: 999;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+  transform: translateY(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+footer.hidden {
+  transform: translateY(100%);
 }
 
 .footer-content {
@@ -20,10 +25,16 @@ footer {
   margin: 0 auto;
 }
 
+.footer-content a {
+  text-decoration: none;
+}
+
 .logo {
   font-family: "Unica One", sans-serif;
   font-size: 1.5rem;
   color: #222;
+  display: flex;
+  cursor: pointer;
   letter-spacing: 0.15em;
 }
 
@@ -66,4 +77,31 @@ body {
 
 .container {
   padding-bottom: 120px; /* Leave space for the fixed footer */
+}
+
+.footer-nav .active {
+  color: #ff457c;
+  transition: all ease-in-out 0.3s;
+  position: relative;
+}
+
+.footer-nav .active::before {
+  content: '';
+  width: 0%;
+  height: 2px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ff457c;
+  transition: width 0.4s ease-in-out;
+  animation: slideIn 0.4s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
 }

@@ -1,3 +1,4 @@
+     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
     * {
       margin: 0;
       padding: 0;
@@ -31,7 +32,6 @@
 
     /* Diagonal clipping between cards (except first and last edge) */
     .card:nth-child(2),
-    .card:nth-child(3),
     .card:nth-child(4) {
       clip-path: polygon(0 0, 100% 5vw, 100% 100%, 0 100%);
     }
@@ -43,7 +43,13 @@
 
     .card:nth-child(even) {
       background-color: #f4f4f4;
+      transition: all ease-in 0.3s;
     }
+    
+    .card:nth-child(even):hover{
+      clip-path: polygon(0 0, 100% 0vw, 100% 100%, 0 100%);
+    }
+
 
     .card-content {
       position: absolute;
@@ -58,12 +64,14 @@
       text-transform: uppercase;
       margin-bottom: 8px;
       color: #111;
+      font-family: "Unica One", sans-serif;
     }
 
     .card p {
       font-size: 14px;
-      color: #444;
+      color: #aaaaaa;
       max-width: 80%;
+      font-family: trebuchet ms, Verdana, verdana ref, segoe ui, Candara, lucida grande, lucida sans unicode, lucida sans, Tahoma, sans-serif;
     }
 .overlay-form {
   position: absolute;
@@ -71,13 +79,12 @@
   left: 0;
   width: 100%;
   height: 60%;
-  background: rgba(255, 255, 255, 0.92); /* Light background */
+  /* background: rgba(255, 255, 255, 0.92);  */
   color: #111;
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
   z-index: 3;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,12 +110,14 @@
 }
 
 .overlay-form button {
-  padding: 10px 20px;
+  width:80%;
+  padding: 10px 0px;
   border: none;
   border-radius: 6px;
   background: #ff457c;
   color: #fff;
   font-weight: bold;
+  font-family: "Space Grotesk", sans-serif;
   cursor: pointer;
   transition: background 0.3s ease;
 }
@@ -127,3 +136,22 @@
         height: 100vh;
       }
     }
+
+    
+@keyframes SlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateY(5%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+.slide-down {
+    animation: SlideDown cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s both;
+}

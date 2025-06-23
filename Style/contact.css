@@ -1,3 +1,5 @@
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+    
     body {
       margin: 0;
       font-family: 'Unica One', sans-serif;
@@ -50,7 +52,8 @@
     button {
       padding: 12px 16px;
       background-color: #ff598b;
-      color: #2e2e2e;
+      color: #fff;
+      font-family:"Space Grotesk", sans-serif;
       font-weight: bold;
       border: none;
       border-radius: 9px;
@@ -71,3 +74,18 @@
         font-size: 14px;
       }
     }
+
+    @keyframes SlideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.slide-left {
+    animation: SlideLeft cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.6s both;
+}
