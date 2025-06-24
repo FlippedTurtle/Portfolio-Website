@@ -5,6 +5,7 @@ class SmartFooter {
     this.scrollThreshold = 10; // Minimum scroll distance to trigger hide/show
     this.topThreshold = 20; // Distance from top where footer should always be visible
     this.ticking = false;
+    this.mobileBreakpoint = 768; // Screen width below which footer stays fixed
 
     this.init();
   }
@@ -27,6 +28,12 @@ class SmartFooter {
   }
 
   handleScroll() {
+    // Check if screen width is below mobile breakpoint
+    if (window.innerWidth < this.mobileBreakpoint) {
+      this.showFooter(); // Always show footer on mobile
+      return;
+    }
+
     const currentScrollTop =
       window.pageYOffset || document.documentElement.scrollTop;
     const scrollDirection =
