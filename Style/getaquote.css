@@ -168,7 +168,7 @@ body {
   }
 
   .card:nth-last-child{
-    margin-bottom: 10vh;
+    margin-bottom: 3rem !important;
   }
 
   .overlay-form {

@@ -110,4 +110,8 @@ body {
   .footer-nav a{
     font-size: 0.9rem;
   }
+
+  footer{
+    padding:20px 10px;
+  }
 }

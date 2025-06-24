@@ -104,7 +104,7 @@ p{
         flex-direction: column;
         
     }
-    p{
+    .container p{
         margin:0;
     }
     img{
